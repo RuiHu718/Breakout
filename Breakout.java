@@ -1,10 +1,13 @@
 /*
  * File: Breakout.java
  * -------------------
- * Name:
- * Section Leader:
- * 
+ * Name: Rui Hu
+ * Section Leader: myself
+ * This is the first project of reasonable size, good place to try
+ * Why isn't the change being picked up by git?
+ * This is going to be the first commit
  * This file will eventually implement the game of Breakout.
+ * I wanna test out the local git capacity
  */
 
 import acm.graphics.*;
@@ -59,8 +62,59 @@ public class Breakout extends GraphicsProgram {
 
 /* Method: run() */
 /** Runs the Breakout program. */
-	public void run() {
-		/* You fill this in, along with any subsidiary methods */
-	}
+    public void run() {
+	/* You fill this in, along with any subsidiary methods */
+    	setUpGame();
+    }
 
+    private void setUpGame(){
+    	setUpBricks();
+    }
+
+    
+    private void setUpBricks(){
+    	//setUpOneRow(70, Color.RED);
+    	int i = 0;
+    	int y = 70;
+    	Color color = Color.RED;
+    	
+    	while(i < NBRICK_ROWS){
+    		int j = 0;
+    		int x = 0;
+    		System.out.println(i);
+    		y = 70 + i*(BRICK_HEIGHT+BRICK_SEP);
+    		if(i < 2) color = Color.RED;
+    		else if(i < 4) color = Color.BLUE;
+    		else if(i < 6) color = Color.ORANGE;
+    		else if(i < 8) color = Color.GREEN;
+    		else if(i < 10) color = Color.CYAN;
+    			
+    		while(j < NBRICKS_PER_ROW){
+    			System.out.println(color);
+    			GRect grect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+        		grect.setColor(color);
+        		grect.setFilled(true);
+        		add(grect);
+        		//add(new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT));
+        		x = x + BRICK_WIDTH + BRICK_SEP;
+        		j++;
+    		}   
+    		i++;
+    	}  	
+    }
+
+ /*   private void setUpOneRow(int y, Color color ){
+    	System.out.println(y);
+    	int i = 0;
+    	int x = 0;
+    	while(i < NBRICKS_PER_ROW){
+    		GRect grect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+    		grect.setColor(color);
+    		grect.setFilled(true);
+    		add(grect);
+    		//add(new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT));
+    		x = x + BRICK_WIDTH + BRICK_SEP;
+    	}
+    }
+*/
 }

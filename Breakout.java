@@ -81,7 +81,6 @@ public class Breakout extends GraphicsProgram {
     	while(i < NBRICK_ROWS){
     		int j = 0;
     		int x = 0;
-    		System.out.println(i);
     		y = 70 + i*(BRICK_HEIGHT+BRICK_SEP);
     		if(i < 2) color = Color.RED;
     		else if(i < 4) color = Color.BLUE;
@@ -90,7 +89,6 @@ public class Breakout extends GraphicsProgram {
     		else if(i < 10) color = Color.CYAN;
     			
     		while(j < NBRICKS_PER_ROW){
-    			System.out.println(color);
     			GRect grect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
         		grect.setColor(color);
         		grect.setFilled(true);

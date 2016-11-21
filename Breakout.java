@@ -76,22 +76,22 @@ public class Breakout extends GraphicsProgram {
     private void setUpBricks(){
     	
     	int i = 0;
-    	Color color = Color.RED;
+    	Color brickColor = Color.RED;
     	
     	while(i < NBRICK_ROWS){
     		int j = 0;
     		int x = 0;
     		int y = BRICK_Y_OFFSET + i*(BRICK_HEIGHT+BRICK_SEP);
     		
-    		if(i < 2) color = Color.RED;
-    		else if(i < 4) color = Color.BLUE;
-    		else if(i < 6) color = Color.ORANGE;
-    		else if(i < 8) color = Color.GREEN;
-    		else if(i < 10) color = Color.CYAN;
+    		if(i < 2) brickColor = Color.RED;
+    		else if(i < 4) brickColor = Color.BLUE;
+    		else if(i < 6) brickColor = Color.ORANGE;
+    		else if(i < 8) brickColor = Color.GREEN;
+    		else if(i < 10) brickColor = Color.CYAN;
     			
     		while(j < NBRICKS_PER_ROW){
     			GRect grect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-        		grect.setColor(color);
+        		grect.setColor(brickColor);
         		grect.setFilled(true);
         		add(grect);
         		//add(new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT));

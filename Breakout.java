@@ -76,13 +76,13 @@ public class Breakout extends GraphicsProgram {
     private void setUpBricks(){
     	//setUpOneRow(70, Color.RED);
     	int i = 0;
-    	int y = 70;
+    	//int y = 70;
     	Color color = Color.RED;
     	
     	while(i < NBRICK_ROWS){
     		int j = 0;
     		int x = 0;
-    		y = 70 + i*(BRICK_HEIGHT+BRICK_SEP);
+    		int y = BRICK_Y_OFFSET + i*(BRICK_HEIGHT+BRICK_SEP);
     		if(i < 2) color = Color.RED;
     		else if(i < 4) color = Color.BLUE;
     		else if(i < 6) color = Color.ORANGE;

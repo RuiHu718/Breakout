@@ -3,12 +3,6 @@
  * -------------------
  * Name: Rui Hu
  * Section Leader: myself
- * This is the first project of reasonable size, good place to try
- * Why isn't the change being picked up by git?
- * This is going to be the first commit
- * This file will eventually implement the game of Breakout.
- * I wanna test out the local git capacity
- * would it work this time?
  */
 
 import acm.graphics.*;
@@ -61,20 +55,21 @@ public class Breakout extends GraphicsProgram {
 /** Number of turns */
 	private static final int NTURNS = 3;
 
-/* Method: run() */
+
 /** Runs the Breakout program. */
     public void run() {
 	/* You fill this in, along with any subsidiary methods */
     	setUpGame();
     }
 
+/** Sets up the basic blocks of the game. */    
     private void setUpGame(){
     	setUpBricks();
     }
 
-    
-    private void setUpBricks(){
-    	
+
+/** Initializes the bricks*/    
+    private void setUpBricks(){    	
     	int i = 0;
     	Color brickColor = Color.RED;
     	
@@ -94,7 +89,6 @@ public class Breakout extends GraphicsProgram {
         		grect.setColor(brickColor);
         		grect.setFilled(true);
         		add(grect);
-        		//add(new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT));
         		x = x + BRICK_WIDTH + BRICK_SEP;
         		j++;
     		}   
@@ -103,18 +97,5 @@ public class Breakout extends GraphicsProgram {
     	}  	
     }
 
- /*   private void setUpOneRow(int y, Color color ){
-    	System.out.println(y);
-    	int i = 0;
-    	int x = 0;
-    	while(i < NBRICKS_PER_ROW){
-    		GRect grect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-    		grect.setColor(color);
-    		grect.setFilled(true);
-    		add(grect);
-    		//add(new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT));
-    		x = x + BRICK_WIDTH + BRICK_SEP;
-    	}
-    }
-*/
+
 }

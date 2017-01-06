@@ -62,6 +62,7 @@ public class Breakout extends GraphicsProgram {
     	setUpGame();
     }
 
+
 /** Sets up the basic blocks of the game. */    
     private void setUpGame(){
     	setUpBricks();
@@ -91,11 +92,18 @@ public class Breakout extends GraphicsProgram {
         		add(grect);
         		x = x + BRICK_WIDTH + BRICK_SEP;
         		j++;
-    		}   
-    		
+    		}    		
     		i++;
     	}  	
     }
 
+    
+/** Sets up the paddle in the middle and associates either mice or keyboard with it */    
+    private void setUpPaddle(){
+    	GRect paddle = new GRect(170, 570, PADDLE_WIDTH, PADDLE_HEIGHT);
+    	paddle.setColor(Color.BLACK);
+    	paddle.setFilled(true);
+    	add(paddle);
+    }
 
 }

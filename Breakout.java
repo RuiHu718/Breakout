@@ -66,6 +66,7 @@ public class Breakout extends GraphicsProgram {
 /** Sets up the basic blocks of the game. */    
     private void setUpGame(){
     	setUpBricks();
+    	setUpPaddle();
     }
 
 

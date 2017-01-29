@@ -99,6 +99,7 @@ public class Breakout extends GraphicsProgram {
     }
 
 //shall I write something new?
+//not sure whether this will work
     
     
 /** Sets up the paddle in the middle and associates either mice or keyboard with it */    

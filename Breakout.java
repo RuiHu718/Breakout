@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * File: Breakout.java
  * -------------------
@@ -98,11 +99,8 @@ public class Breakout extends GraphicsProgram {
     	}  	
     }
 
-//shall I write something new?
-//not sure whether this will work
-    
-    
-/** Sets up the paddle in the middle and associates either mice or keyboard with it */    
+
+    /** Sets up the paddle in the middle and associates either mice or keyboard with it */    
     private void setUpPaddle(){
     	GRect paddle = new GRect(170, 570, PADDLE_WIDTH, PADDLE_HEIGHT);
     	paddle.setColor(Color.BLACK);

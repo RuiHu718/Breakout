@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * File: Breakout.java
  * -------------------

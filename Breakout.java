@@ -55,6 +55,9 @@ public class Breakout extends GraphicsProgram {
 /** Number of turns */
 	private static final int NTURNS = 3;
 
+/** Time delay between ball movements */
+        private static final int DELAY = 50;
+    
 /** The paddle. */
     private GRect paddle;
 
@@ -70,6 +73,9 @@ public class Breakout extends GraphicsProgram {
 
 // Random generator for initial vx of ball
     private RandomGenerator rgen = RandomGenerator.getInstance();
+
+
+
     
 
 /** Runs the Breakout program. */
@@ -104,8 +110,12 @@ public class Breakout extends GraphicsProgram {
 
         int i = 0;
         while (i<100){
+            if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
+            if (ball.getX() < 0) vx = -vx;
+            if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
+            if (ball.getY() < 0) vy = -vy;
             ball.move(vx, vy);
-            pause(60);
+            pause(DELAY);
             i++;
         }
     }

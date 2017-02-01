@@ -71,7 +71,7 @@ public class Breakout extends GraphicsProgram {
 /** Variables to track ball velocity */
     private double vx, vy;
 
-// Random generator for initial vx of ball
+/** Random generator for initial vx of ball */
     private RandomGenerator rgen = RandomGenerator.getInstance();
 
 
@@ -166,10 +166,9 @@ public class Breakout extends GraphicsProgram {
     }
 
     public void mouseDragged(MouseEvent e){
-
         if ((paddle.getX()+e.getX()-lastX) > 340 ){
             paddle.move(340-paddle.getX(), 0);
-            lastX = e.getX();
+            //lastX = e.getX();
         }
         else if ((paddle.getX()+e.getX()-lastX) < 0){
             paddle.move(0-paddle.getX(), 0);

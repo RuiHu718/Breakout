@@ -55,6 +55,9 @@ public class Breakout extends GraphicsProgram {
 /** Number of turns */
 	private static final int NTURNS = 3;
 
+/** The paddle. */
+    private GRect paddle;
+
 
 /** Runs the Breakout program. */
     public void run() {
@@ -62,6 +65,8 @@ public class Breakout extends GraphicsProgram {
     	setUpGame();
     }
 
+
+    
 
 /** Sets up the basic blocks of the game. */    
     private void setUpGame(){
@@ -101,7 +106,7 @@ public class Breakout extends GraphicsProgram {
 
     /** Sets up the paddle in the middle and associates either mice or keyboard with it */    
     private void setUpPaddle(){
-    	GRect paddle = new GRect(170, 570, PADDLE_WIDTH, PADDLE_HEIGHT);
+    	paddle = new GRect(170, 570, PADDLE_WIDTH, PADDLE_HEIGHT);
     	paddle.setColor(Color.BLACK);
     	paddle.setFilled(true);
     	add(paddle);

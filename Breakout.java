@@ -171,6 +171,7 @@ public class Breakout extends GraphicsProgram {
     }
 
 
+    /** Moves the ball and check for collisions */
     private void moveBall(){
         vx = rgen.nextDouble(1.0, 3.0);
         if (rgen.nextBoolean(0.5)) vx = -vx;  //pick a random direction

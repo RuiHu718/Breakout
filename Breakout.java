@@ -122,7 +122,7 @@ public class Breakout extends GraphicsProgram {
         lastY = e.getY();
     }
 
-    public void mouseDragged(MouseEvent e){
+    public void mouseMoved(MouseEvent e){
         paddle.move(e.getX() - lastX, e.getY() - lastY);
         lastX = e.getX();
         lastY = e.getY();

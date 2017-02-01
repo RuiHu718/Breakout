@@ -64,6 +64,12 @@ public class Breakout extends GraphicsProgram {
 
 /** Game ball */   
     private GOval ball;
+
+/** Variables to track ball velocity */
+    private double vx, vy;
+
+// Random generator for initial vx of ball
+    private RandomGenerator rgen = RandomGenerator.getInstance();
     
 
 /** Runs the Breakout program. */
@@ -92,7 +98,11 @@ public class Breakout extends GraphicsProgram {
         add(ball);
 
         //Make it move
-        
+        vx = rgen.nextDouble(1.0, 3.0);
+        if (rgen.nextBoolean(0.5)) vx = -vx;
+        vy = 3.0;
+
+        ball.move(vx, vy);
         
     }
 

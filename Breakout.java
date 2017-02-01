@@ -58,6 +58,10 @@ public class Breakout extends GraphicsProgram {
 /** The paddle. */
     private GRect paddle;
 
+/** The last mouse X and Y position*/
+    private double lastX;
+    private double lastY;
+
 
 /** Runs the Breakout program. */
     public void run() {
@@ -113,8 +117,15 @@ public class Breakout extends GraphicsProgram {
 
 
     /** Sets paddle to track mouse movement */
+    public void mousePressed(MouseEvent e){
+        lastX = e.getX();
+        lastY = e.getY();
+    }
+
     public void mouseMoved(MouseEvent e){
-        paddle.move(e.getX(), e.getY());
+        paddle.move(e.getX() - lastX, e.getY() - lastY);
+        lastX = e.getX();
+        lastY = e.getY();
     }
 
 

@@ -56,7 +56,7 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 
 /** Time delay between ball movements */
-        private static final int DELAY = 50;
+        private static final int DELAY = 30;
     
 /** The paddle. */
     private GRect paddle;
@@ -109,7 +109,7 @@ public class Breakout extends GraphicsProgram {
         vy = 3.0;
 
         int i = 0;
-        while (i<100){
+        while (i<500){
             if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
             if (ball.getX() < 0) vx = -vx;
             if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;

@@ -114,7 +114,7 @@ public class Breakout extends GraphicsProgram {
 
     /** Sets paddle to track mouse movement */
     public void mouseDragged(MouseEvent e){
-        paddle.move(e.getX(), e.getY())
+        paddle.move(e.getX(), e.getY());
     }
 
 

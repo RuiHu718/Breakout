@@ -129,7 +129,7 @@ public class Breakout extends GraphicsProgram {
     //    }
 
         if ((paddle.getX()+e.getX()-lastX) > 340 ){
-            paddle.move(340, 0);
+            paddle.move(340-paddle.getX(), 0);
             //lastX = e.getX();
         }
         else{

@@ -67,7 +67,7 @@ public class Breakout extends GraphicsProgram {
     public void run() {
 	/* You fill this in, along with any subsidiary methods */
     	setUpGame();
-        addMouseListeners();
+
     }
     
 
@@ -75,6 +75,7 @@ public class Breakout extends GraphicsProgram {
     private void setUpGame(){
     	setUpBricks();
     	setUpPaddle();
+        addMouseListeners();
     }
 
 

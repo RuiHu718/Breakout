@@ -98,22 +98,8 @@ public class Breakout extends GraphicsProgram {
     private void playGame(){
 
         initializeBall();
+        moveBall();
 
-        //Make it move
-        vx = rgen.nextDouble(1.0, 3.0);
-        if (rgen.nextBoolean(0.5)) vx = -vx;
-        vy = 3.0;
-
-        int i = 0;
-        while (i<500){
-            if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
-            if (ball.getX() < 0) vx = -vx;
-            if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
-            if (ball.getY() < 0) vy = -vy;
-            ball.move(vx, vy);
-            pause(DELAY);
-            i++;
-        }
     }
 
     
@@ -185,6 +171,24 @@ public class Breakout extends GraphicsProgram {
     }
 
 
+    private void moveBall(){
+        vx = rgen.nextDouble(1.0, 3.0);
+        if (rgen.nextBoolean(0.5)) vx = -vx;  //pick a random direction
+        vy = 3.0;
+
+        int i = 0;
+        //need this loop for testing
+        while (i<500){
+            //check the four sides
+            if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
+            if (ball.getX() < 0) vx = -vx;
+            if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
+            if (ball.getY() < 0) vy = -vy;
+            ball.move(vx, vy);
+            pause(DELAY);
+            i++;
+        }
+    }
 
 
 

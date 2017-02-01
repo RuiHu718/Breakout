@@ -97,11 +97,7 @@ public class Breakout extends GraphicsProgram {
 /** Start playing the game */
     private void playGame(){
 
-        //Sets up the game ball
-        ball = new GOval(WIDTH/2-BALL_RADIUS, HEIGHT/2-BALL_RADIUS, BALL_RADIUS*2, BALL_RADIUS*2);
-        ball.setColor(Color.BLACK);
-        ball.setFilled(true);
-        add(ball);
+        initializeBall();
 
         //Make it move
         vx = rgen.nextDouble(1.0, 3.0);
@@ -180,7 +176,13 @@ public class Breakout extends GraphicsProgram {
     }
 
 
-
+    /** Initializes the game ball */
+    private void initializeBall(){
+        ball = new GOval(WIDTH/2-BALL_RADIUS, HEIGHT/2-BALL_RADIUS, BALL_RADIUS*2, BALL_RADIUS*2);
+        ball.setColor(Color.BLACK);
+        ball.setFilled(true);
+        add(ball);
+    }
 
 
 

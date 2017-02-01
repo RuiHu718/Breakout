@@ -105,7 +105,7 @@ public class Breakout extends GraphicsProgram {
         int i = 0;
         while (i<100){
             ball.move(vx, vy);
-            pause(500);
+            pause(200);
             i++;
         }
     }

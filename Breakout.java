@@ -63,9 +63,8 @@ public class Breakout extends GraphicsProgram {
     public void run() {
 	/* You fill this in, along with any subsidiary methods */
     	setUpGame();
+        addMouseListeners();
     }
-
-
     
 
 /** Sets up the basic blocks of the game. */    
@@ -111,5 +110,27 @@ public class Breakout extends GraphicsProgram {
     	paddle.setFilled(true);
     	add(paddle);
     }
+
+
+    /** Sets paddle to track mouse movement */
+    public void mouseDragged(MouseEvent e){
+        paddle.move(e.getX(), e.getY())
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

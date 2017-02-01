@@ -62,16 +62,19 @@ public class Breakout extends GraphicsProgram {
     private double lastX;
     private double lastY;
 
+/** Game ball */   
+    private GOval ball;
+    
 
 /** Runs the Breakout program. */
     public void run() {
-	/* You fill this in, along with any subsidiary methods */
     	setUpGame();
+        playGame();
 
     }
     
 
-/** Sets up the basic blocks of the game. */    
+/** Sets up the basic blocks and paddle of the game. */    
     private void setUpGame(){
     	setUpBricks();
     	setUpPaddle();
@@ -79,6 +82,15 @@ public class Breakout extends GraphicsProgram {
     }
 
 
+/** Start playing the game */
+    private void playGame(){
+        ball = new GOval(190, 290, 20, 20);
+        ball.setColor(Color.BLACK);
+        ball.setFilled(true);
+        add(ball);
+    }
+
+    
 /** Initializes the bricks*/    
     private void setUpBricks(){    	
     	int i = 0;

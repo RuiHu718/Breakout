@@ -188,9 +188,13 @@ public class Breakout extends GraphicsProgram {
             if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
             if (ball.getY() < 0) vy = -vy;
 
-            if (getCollidingObject(ball.getX(), ball.getY()) == paddle){
-                vy = -vy;
+            collider = getCollidingObject(ball.getX(), ball.getY());
+            if (collider == paddle){
+                vy = -vy;       
             }
+            // elif(getCollidingObject(ball.getX(), ball.getY()) != null){
+                
+            // }
 
             pause(DELAY);
             i++;
@@ -200,11 +204,12 @@ public class Breakout extends GraphicsProgram {
 
     /** Checks and returns colliding object, null otherwise */
     private GObject getCollidingObject(double x, double y){
+        GObject gobj;
         /** Needs to check four corners of the surrounding square */
-        if ((collider = getElementAt(x, y)) != null) return collider;
-        if ((collider = getElementAt(x+2*BALL_RADIUS, y)) != null) return collider;
-        if ((collider = getElementAt(x, y+2*BALL_RADIUS)) != null) return collider;
-        if ((collider = getElementAt(x+2*BALL_RADIUS, y+2*BALL_RADIUS)) != null) return collider;        
+        if ((gobj = getElementAt(x, y)) != null) return gobj;
+        if ((gobj = getElementAt(x+2*BALL_RADIUS, y)) != null) return gobj;
+        if ((gobj = getElementAt(x, y+2*BALL_RADIUS)) != null) return gobj;
+        if ((gobj = getElementAt(x+2*BALL_RADIUS, y+2*BALL_RADIUS)) != null) return gobj;        
         return null;
     }
 

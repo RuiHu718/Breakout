@@ -192,9 +192,9 @@ public class Breakout extends GraphicsProgram {
             if (collider == paddle){
                 vy = -vy;       
             }
-            // elif(getCollidingObject(ball.getX(), ball.getY()) != null){
-                
-            // }
+            else if(collider != null){
+                remove(collider);
+            }
 
             pause(DELAY);
             i++;

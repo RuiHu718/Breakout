@@ -74,7 +74,8 @@ public class Breakout extends GraphicsProgram {
 /** Random generator for initial vx of ball */
     private RandomGenerator rgen = RandomGenerator.getInstance();
 
-
+/** Collide object */
+    private GObject collider;
 
     
 
@@ -177,22 +178,35 @@ public class Breakout extends GraphicsProgram {
         if (rgen.nextBoolean(0.5)) vx = -vx;  //pick a random direction
         vy = 3.0;
 
-        int i = 0;
-        //need this loop for testing
+        int i = 0;              // need this for testing
         while (i<500){
-            //check the four sides
+            ball.move(vx, vy);
+
+            /** check four sides */
             if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
             if (ball.getX() < 0) vx = -vx;
             if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
             if (ball.getY() < 0) vy = -vy;
-            ball.move(vx, vy);
+
+            if (getCollidingObject(ball.getX(), ball.getY()) == paddle){
+                vy = -vy;
+            }
+
             pause(DELAY);
             i++;
         }
     }
 
 
-
+    /** Checks and returns colliding object, null otherwise */
+    private GObject getCollidingObject(double x, double y){
+        /** Needs to check four corners of the surrounding square */
+        if ((collider = getElementAt(x, y)) != null) return collider;
+        if ((collider = getElementAt(x+2*BALL_RADIUS, y)) != null) return collider;
+        if ((collider = getElementAt(x, y+2*BALL_RADIUS)) != null) return collider;
+        if ((collider = getElementAt(x+2*BALL_RADIUS, y+2*BALL_RADIUS)) != null) return collider;        
+        return null;
+    }
 
 
 

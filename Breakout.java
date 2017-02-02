@@ -172,7 +172,7 @@ public class Breakout extends GraphicsProgram {
     }
 
 
-    /** Moves the ball and check for collisions */
+    /** Moves the ball, checks for collisions, bounce and remove objects */
     private void moveBall(){
         vx = rgen.nextDouble(1.0, 3.0);
         if (rgen.nextBoolean(0.5)) vx = -vx;  //pick a random direction
@@ -192,8 +192,9 @@ public class Breakout extends GraphicsProgram {
             if (collider == paddle){
                 vy = -vy;       
             }
-            else if(collider != null){
+            else if(collider != null){ // hit a brick
                 remove(collider);
+                vy = -vy;
             }
 
             pause(DELAY);

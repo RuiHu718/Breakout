@@ -97,10 +97,8 @@ public class Breakout extends GraphicsProgram {
 
 /** Start playing the game */
     private void playGame(){
-
         initializeBall();
         moveBall();
-
     }
 
     

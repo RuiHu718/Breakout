@@ -185,7 +185,8 @@ public class Breakout extends GraphicsProgram {
             if (ball.getX()+2*BALL_RADIUS > WIDTH) vx = -vx;
             if (ball.getX() < 0) vx = -vx;
             if (ball.getY()+2*BALL_RADIUS > HEIGHT) vy = -vy;
-            if (ball.getY() < 0) vy = -vy;
+            //if (ball.getY() < 0) vy = -vy; 
+            if (ball.getY() < 0) break; // terminates if hit bottom
 
             collider = getCollidingObject(ball.getX(), ball.getY());
             if (collider == paddle){

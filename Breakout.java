@@ -78,7 +78,7 @@ public class Breakout extends GraphicsProgram {
     private GObject collider;
 
 /** Total number of bricks in the game */    
-    private int totalNumBricks = 100;
+    private int totalNumBricks = 3;
 
     
 
@@ -181,7 +181,7 @@ public class Breakout extends GraphicsProgram {
         vy = 3.0;
 
         int i = 0;              // need this for testing
-        while (i<500){
+        while (i<1000){
             ball.move(vx, vy);
 
             /** check four sides */

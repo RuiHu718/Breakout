@@ -105,7 +105,6 @@ public class Breakout extends GraphicsProgram {
     }
 
 
-    /** git is annoying */    
 /** Initializes the bricks*/    
     private void setUpBricks(){    	
     	int i = 0;

@@ -77,6 +77,9 @@ public class Breakout extends GraphicsProgram {
 /** Collide object */
     private GObject collider;
 
+/** Total number of bricks in the game */    
+    private int totalNumBricks = 100;
+
     
 
 /** Runs the Breakout program. */
@@ -195,6 +198,11 @@ public class Breakout extends GraphicsProgram {
             }
             else if(collider != null){ // hit a brick
                 remove(collider);
+                totalNumBricks = totalNumBricks - 1;
+                if (totalNumBricks == 0){
+                    println("You won the game!");
+                    break;
+                }
                 vy = -vy;
             }
 
